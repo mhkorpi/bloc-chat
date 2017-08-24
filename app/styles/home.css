@@ -1,0 +1,25 @@
+.nav {
+	float: left;
+	width: 150px;
+	height: 100vh;
+	background-color: #DEDEDE;
+}
+
+.nav .title {
+	margin: 20px;
+}
+
+.nav .room-list {
+	margin-left: 20px;
+	list-style: none;
+}
+
+.nav .room-item {
+	margin: 5px 0 5px 0;
+}
+
+.room {
+	width: 100%;
+	height: 100vh;
+	background-color: gray;
+}
