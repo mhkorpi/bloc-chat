@@ -1,3 +1,3 @@
-<ul class="room-list" ng-controller="HomeCtrl as home">
-	<li class="room-item" ng-repeat="room in home.rooms">Room {{ $index + 1 }}</li>
+<ul class="room-list">
+	<li class="room-item" ng-repeat="room in rooms">{{ room.$id }}</li>
 </ul>
