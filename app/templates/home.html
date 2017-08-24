@@ -1,1 +1,3 @@
-<h1>Home Page</h1>
+<ul class="room-list" ng-controller="HomeCtrl as home">
+	<li class="room-item" ng-repeat="room in home.rooms">Room {{ $index + 1 }}</li>
+</ul>
