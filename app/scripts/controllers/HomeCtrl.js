@@ -3,7 +3,7 @@
 		$scope.rooms = Room.all;
 
 		$scope.open = function () {
-			$uibModal.open({
+			Room.modal = $uibModal.open({
 				templateUrl: '/templates/create_room_modal.html',
 				controller: 'ModalCtrl'
 			});
