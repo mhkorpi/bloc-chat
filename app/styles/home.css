@@ -9,6 +9,10 @@
 	margin: 20px;
 }
 
+.nav .new-room {
+	margin-left: 17px;
+}
+
 .nav .room-list {
 	margin-left: 20px;
 	list-style: none;
