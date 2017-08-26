@@ -1,7 +1,9 @@
 (function () {
-	function ModalCtrl ($scope, $uibModal) {
-		$scope.create = function() {
+	function ModalCtrl (Room, $scope, $uibModal, $document) {
 
+		$scope.create = function() {
+			var newRoomName = document.getElementById('new-room-name').value;
+			Room.add(newRoomName);
 		};
 
 		$scope.cancel = function() {
@@ -11,5 +13,5 @@
 
 	angular
 		.module('blocChat')
-		.controller('ModalCtrl', ['$scope', '$uibModal', ModalCtrl]);
+		.controller('ModalCtrl', ['Room', '$scope', '$uibModal', '$document', ModalCtrl]);
 })();

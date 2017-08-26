@@ -5,8 +5,7 @@
 		$scope.open = function () {
 			$uibModal.open({
 				templateUrl: '/templates/create_room_modal.html',
-				controller: 'ModalCtrl',
-
+				controller: 'ModalCtrl'
 			});
 		};
 	}
