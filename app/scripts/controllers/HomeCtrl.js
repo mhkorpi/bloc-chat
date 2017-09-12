@@ -18,7 +18,7 @@
 				templateUrl: '/templates/create_room_modal.html',
 				controller: 'ModalCtrl'
 			});
-		};;
+		};
 	}
 
 	angular
