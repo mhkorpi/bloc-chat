@@ -3,6 +3,7 @@
 	width: 150px;
 	height: 100vh;
 	background-color: #DEDEDE;
+	margin-right: 20px;
 }
 
 .nav .title {
@@ -26,4 +27,13 @@
 	width: 100%;
 	height: 100vh;
 	background-color: gray;
+}
+
+.room #room-title {
+	color: #DEDEDE;
+	display: inline-block;
+}
+
+.room .message-list {
+	list-style: none;
 }

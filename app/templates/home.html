@@ -2,10 +2,15 @@
 	<h3 class="title">Bloc Chat</h3>
 	<button type="button" class="button new-room" ng-click="open()">Create New Room</button>
 	<ul class="room-list">
-		<li class="room-item" ng-repeat="room in rooms">{{ room.$value }}</li>
+		<li class="room-item" ng-repeat="room in rooms" ng-click="$scope.currentRoomId = room.$id"><a ng-click="setRoom(room)">{{ room.$value }}</a></li>
 	</ul>
 </section>
 
 <section class="room">
-	
+	<h4 id="room-title"></h4>
+	<!-- I tried using data binding here, but it would load only the initial value of currentRoom, and would not change when currentRoom changed -->
+	<ul class="message-list" ng-show="messages">
+		<li class="message-item" ng-repeat="message in messages">{{message.username}} says: {{message.content}}</li>
+
+	</ul>
 </section>

@@ -4,7 +4,7 @@
 		$scope.create = function() {
 			var newRoomName = document.getElementById('new-room-name').value;
 			Room.add(newRoomName);
-			$scope.cancel();
+			$uibModalInstance.close();
 		};
 
 		$scope.cancel = function() {
