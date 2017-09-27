@@ -5,9 +5,9 @@
 		$scope.messages = null;
 
 		$scope.setRoom = function(room) {
-			var titleElement = document.getElementById('room-title');
-			titleElement.textContent = room.$value;
-		
+			$scope.currentRoom = room.$value;
+			console.log($scope.currentRoom);
+
 			Message.getByRoomId(room.$id);
 			$scope.messages = Message.messages;
 			console.log('current room messages', $scope.messages)
