@@ -1,9 +1,9 @@
 (function () {
 	function ModalCtrl (Room, $scope, $uibModalInstance) {
+		console.log('ModalCtrl.js test')
 
 		$scope.create = function() {
-			var newRoomName = document.getElementById('new-room-name').value;
-			Room.add(newRoomName);
+			Room.add($scope.newRoomName);
 			$uibModalInstance.close();
 		};
 

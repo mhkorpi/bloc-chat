@@ -6,11 +6,9 @@
 
 		$scope.setRoom = function(room) {
 			$scope.currentRoom = room.$value;
-			console.log($scope.currentRoom);
 
 			Message.getByRoomId(room.$id);
 			$scope.messages = Message.messages;
-			console.log('current room messages', $scope.messages)
 		};
 
 		$scope.open = function () {

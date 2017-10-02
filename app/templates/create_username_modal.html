@@ -1,0 +1,12 @@
+<div class="modal-header">
+	<h3 class="modal-title">Create Username</h3>
+</div>
+<div class="modal-body">
+	<form class="create-username-form">
+		<input id="new-name" type="text" placeholder="Enter username here" onfocus="this.placeholder = ''" ng-model="username" onblur="this.placeholder = 'Enter username here'" />
+	</form>
+</div>
+<div class="modal-footer">
+  <!-- what happens with username when button is clicked -->
+	<button class="button create-username-modal" type="button" ng-click="login()">Login With Username</button>
+</div>
