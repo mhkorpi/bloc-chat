@@ -1,6 +1,5 @@
 (function () {
 	function ModalCtrl (Room, $scope, $uibModalInstance, $cookies) {
-		console.log('ModalCtrl.js test')
 
 		$scope.create = function() {
 			Room.add($scope.newRoomName);
@@ -14,8 +13,8 @@
 		$scope.login = function() {
 			$cookies.put('blocChatCurrentUser', $scope.username);
 			$uibModalInstance.close();
-			console.log('username', $cookies.get('blocChatCurrentUser'));
-		}
+			console.log('currentUser', $scope.currentUser)
+			}
 	}
 
 	angular

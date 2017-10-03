@@ -10,8 +10,22 @@
 	margin: 20px;
 }
 
+.nav .user {
+	margin-left: 20px;
+}
+
 .nav .new-room {
 	margin-left: 17px;
+}
+
+.nav .logout {
+	margin-left: 17px;
+	margin-bottom: 20px;
+}
+
+.nav .login {
+	margin-left: 17px;
+	margin-bottom: 20px;
 }
 
 .nav .room-list {
