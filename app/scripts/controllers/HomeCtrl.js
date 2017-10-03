@@ -1,15 +1,11 @@
 (function () {
-	function HomeCtrl(Room, Message, $scope, $uibModal, $cookies) {
+	function HomeCtrl(Room, Message, Username, $scope, $uibModal, $cookies) {
+
 		$scope.rooms = Room.all;
 
 		$scope.messages = null;
 
-		$scope.currentUser = $cookies.get('blocChatCurrentUser');
-
-		$scope.setUser = function () {
-			$scope.currentUser = $cookies.get('blocChatCurrentUser');
-			console.log($scope.currentUser);
-		}	
+		$scope.currentUser = Username.currentUser;
 
 		$scope.setRoom = function(room) {
 			$scope.currentRoom = room.$value;
@@ -21,7 +17,7 @@
 		$scope.open = function () {
 			$uibModal.open({
 				templateUrl: '/templates/create_room_modal.html',
-				controller: 'ModalCtrl'
+				controller: 'RoomModalCtrl'
 			});
 		};
 
@@ -33,12 +29,12 @@
 		$scope.newUser = function () {
 			$uibModal.open({
 				templateUrl: '/templates/create_username_modal.html',
-        		controller: 'ModalCtrl'
+        controller: 'UserModalCtrl'
 			});
 		}
 	}
 
 	angular
 		.module('blocChat')
-		.controller('HomeCtrl', ['Room', 'Message', '$scope', '$uibModal', '$cookies', HomeCtrl]);
+		.controller('HomeCtrl', ['Room', 'Message', 'Username', '$scope', '$uibModal', '$cookies', HomeCtrl]);
 })();
