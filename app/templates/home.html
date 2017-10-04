@@ -1,6 +1,7 @@
 <section class="nav">
 	<h3 class="title">Bloc Chat</h3>
-	<p class="user" ng-hide="!currentUser">Current user: <strong> {{ currentUser }} </strong> </p>
+	<p class="user" ng-hide="!currentUser">Current user: <br/>
+		<strong> {{ currentUser }} </strong> </p>
 	<button type="button" class="button logout" ng-click="logout()" ng-hide="!currentUser">Sign Out</button>
 	<button type="button" class="button login" ng-click="newUser()" ng-show="!currentUser">Sign In</button>
 	<button type="button" class="button new-room" ng-click="open()" ng-hide="!currentUser">Create New Room</button>

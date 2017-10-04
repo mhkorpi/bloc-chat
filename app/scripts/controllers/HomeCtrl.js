@@ -15,7 +15,6 @@
 
 		$scope.open = function () {
 			$uibModal.open({
-				backdrop: 'static',
 				templateUrl: '/templates/create_room_modal.html',
 				controller: 'RoomModalCtrl'
 			});
@@ -28,6 +27,7 @@
 
 		$scope.newUser = function () {
 			$uibModal.open({
+				backdrop: 'static',
 				templateUrl: '/templates/create_username_modal.html',
 				controller: 'UserModalCtrl'
 			});
