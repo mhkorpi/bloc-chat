@@ -9,7 +9,6 @@
 
 		$scope.setRoom = function(room) {
 			$scope.currentRoom = room.$value;
-
 			Message.getByRoomId(room.$id);
 			$scope.messages = Message.messages;
 		};
@@ -29,9 +28,9 @@
 		$scope.newUser = function () {
 			$uibModal.open({
 				templateUrl: '/templates/create_username_modal.html',
-        controller: 'UserModalCtrl'
+				controller: 'UserModalCtrl'
 			});
-		}
+		};
 	}
 
 	angular
