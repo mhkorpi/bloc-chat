@@ -1,11 +1,11 @@
 (function () {
-	function HomeCtrl(Room, Message, Username, $scope, $uibModal, $cookies) {
+	function HomeCtrl(Room, Message, $scope, $rootScope, $uibModal, $cookies) {
 
 		$scope.rooms = Room.all;
 
 		$scope.messages = null;
 
-		$scope.currentUser = Username.currentUser;
+		$scope.$watch($rootScope.currentUser);
 
 		$scope.setRoom = function(room) {
 			$scope.currentRoom = room.$value;
@@ -15,6 +15,7 @@
 
 		$scope.open = function () {
 			$uibModal.open({
+				backdrop: 'static',
 				templateUrl: '/templates/create_room_modal.html',
 				controller: 'RoomModalCtrl'
 			});
@@ -22,7 +23,7 @@
 
 		$scope.logout = function() {
 			$cookies.remove('blocChatCurrentUser')
-			$scope.currentUser = null;
+			$rootScope.currentUser = null;
 		};
 
 		$scope.newUser = function () {
@@ -35,5 +36,5 @@
 
 	angular
 		.module('blocChat')
-		.controller('HomeCtrl', ['Room', 'Message', 'Username', '$scope', '$uibModal', '$cookies', HomeCtrl]);
+		.controller('HomeCtrl', ['Room', 'Message', '$scope', '$rootScope', '$uibModal', '$cookies', HomeCtrl]);
 })();

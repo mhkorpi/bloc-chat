@@ -1,8 +1,8 @@
 (function() {
-  function BlocChatCookies($cookies, $uibModal, Username) {
+  function BlocChatCookies($cookies, $uibModal, $rootScope) {
 
-    var currentUser = $cookies.get('blocChatCurrentUser');
-    if (!Username.currentUser || Username.currentUser === '') {
+    $rootScope.currentUser = $cookies.get('blocChatCurrentUser');
+    if (!$rootScope.currentUser || $rootScope.currentUser === '') {
       $uibModal.open({
         // Modal configuration object properties
         backdrop: 'static',
@@ -14,5 +14,5 @@
 
   angular
     .module('blocChat')
-    .run(['$cookies', '$uibModal', 'Username', BlocChatCookies]);
+    .run(['$cookies', '$uibModal', '$rootScope', BlocChatCookies]);
 })();
