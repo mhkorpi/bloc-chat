@@ -3,8 +3,6 @@
 
 		$scope.rooms = Room.all;
 
-		$scope.messages = null;
-
 		$scope.$watch($rootScope.currentUser);
 
 		$scope.setRoom = function(room) {
@@ -28,14 +26,31 @@
 			$scope.messages = null;
 		};
 
-		$scope.send = function(roomId, currentMessage) {
-			// ... logic for filtering messages
+		$scope.send = function(roomId, currentMessage, time) {
 			currentMessage = $scope.message;
+
+			time = new Date();
+			var h = time.getHours();
+			var m = time.getMinutes();
+			var s = time.getSeconds();
+
+			if (h < 10) {
+				h = '0' + s;
+			}
+
+			if (m < 10) {
+				m = '0' + m;
+			}
+
+			if (s < 10) {
+				s = '0' + s;
+			}
+
 			Message.messages.$add(
 				{
 					content: currentMessage,
 					roomId: $scope.currentRoomId,
-					sentAt: 'test',
+					sentAt: h + ':' + m + ':' + s,
 					username: $scope.currentUser
 				});
 		}
