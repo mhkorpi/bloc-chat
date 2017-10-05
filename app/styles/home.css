@@ -51,3 +51,33 @@
 .room .message-list {
 	list-style: none;
 }
+
+.room #message-text {
+	margin-bottom: 16px;
+	bottom: 0;
+	position: fixed;
+	_position: absolute;
+	_top: expression(eval(document.documentElement.scrollTop + (document.documentElement.clientHeight - this.offsetHeight)));
+	height: 35px;
+	width: 80%;
+	display: inline-block;
+}
+
+#message-field {
+	display: inline-block;
+	margin-top: 10px;
+	min-width: 155px;
+	width: 50%;
+}
+
+.room #send-message {
+	margin: 19px;
+	position: fixed;
+	bottom: 0%;
+	left: 90%;
+}
+
+.room .send {
+	margin-left: 12px;
+
+}

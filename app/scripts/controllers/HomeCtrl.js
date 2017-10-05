@@ -23,6 +23,7 @@
 		$scope.logout = function() {
 			$cookies.remove('blocChatCurrentUser')
 			$rootScope.currentUser = null;
+			$scope.currentRoom = null;
 		};
 
 		$scope.newUser = function () {
