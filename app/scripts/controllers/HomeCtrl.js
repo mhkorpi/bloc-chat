@@ -9,6 +9,7 @@
 
 		$scope.setRoom = function(room) {
 			$scope.currentRoom = room.$value;
+			$scope.currentRoomId = room.$id;
 			Message.getByRoomId(room.$id);
 			$scope.messages = Message.messages;
 		};
@@ -24,7 +25,20 @@
 			$cookies.remove('blocChatCurrentUser')
 			$rootScope.currentUser = null;
 			$scope.currentRoom = null;
+			$scope.messages = null;
 		};
+
+		$scope.send = function(roomId, currentMessage) {
+			// ... logic for filtering messages
+			currentMessage = $scope.message;
+			Message.messages.$add(
+				{
+					content: currentMessage,
+					roomId: $scope.currentRoomId,
+					sentAt: 'test',
+					username: $scope.currentUser
+				});
+		}
 
 		$scope.newUser = function () {
 			$uibModal.open({

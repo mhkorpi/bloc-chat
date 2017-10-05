@@ -9,10 +9,6 @@
         Message.messages = $firebaseArray(ref.orderByChild('roomId').equalTo(roomId));
       };
 
-      Message.send = function(roomId) {
-        // ... logic for filtering messages
-      }
-
     	return Message;
   	}
 
