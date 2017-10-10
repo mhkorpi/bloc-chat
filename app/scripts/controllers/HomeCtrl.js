@@ -26,33 +26,19 @@
 			$scope.messages = null;
 		};
 
-		$scope.send = function(roomId, currentMessage, time) {
-			currentMessage = $scope.message;
+		$scope.send = function () {
+			// send info on HomeCtrl scope to Message factory
+			Message.message = $scope.message;
+			Message.currentRoomId = $scope.currentRoomId;
+			Message.currentUser = $scope.currentUser;
 
-			time = new Date();
-			var h = time.getHours();
-			var m = time.getMinutes();
-			var s = time.getSeconds();
+			// add message to firebase array
+			Message.send();
 
-			if (h < 10) {
-				h = '0' + s;
-			}
-
-			if (m < 10) {
-				m = '0' + m;
-			}
-
-			if (s < 10) {
-				s = '0' + s;
-			}
-
-			Message.messages.$add(
-				{
-					content: currentMessage,
-					roomId: $scope.currentRoomId,
-					sentAt: h + ':' + m + ':' + s,
-					username: $scope.currentUser
-				});
+			// reset message field
+			(function clearMessage () {
+				$scope.message = '';
+			})();
 		}
 
 		$scope.newUser = function () {
