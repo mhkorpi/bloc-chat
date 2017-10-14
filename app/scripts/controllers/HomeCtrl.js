@@ -1,6 +1,8 @@
 (function () {
 	function HomeCtrl(Room, Message, $scope, $rootScope, $uibModal, $cookies) {
 
+		$scope.message = '';
+
 		$scope.rooms = Room.all;
 
 		$scope.$watch($rootScope.currentUser);
